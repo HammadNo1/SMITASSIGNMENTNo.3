@@ -1,0 +1,184 @@
+//Q1
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  
+  for (int number in numbers) {
+    if (number % 2 == 0) {
+      print(number);
+    }
+  }
+}
+//Q2
+void main() {
+  int limit = 10;
+  int a = 0;
+  int b = 1;
+  
+  print(a);
+  
+  if (limit >= 2) {
+    print(b); 
+  }
+  
+  for (int i = 3; i <= limit; i++) {
+    int c = a + b;
+    print(c);
+    a = b;
+    b = c;
+  }
+}
+//Q3
+void main() {
+  int number = 17;
+  bool isPrime = true;
+
+  if (number <= 1) {
+    isPrime = false;
+  } else {
+    for (int i = 2; i <= number ~/ 2; i++) {
+      if (number % i == 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+
+  if (isPrime) {
+    print('$number is a prime number.');
+  } else {
+    print('$number is not a prime number.');
+  }
+}
+//Q4
+void main() {
+  int number = 5;
+  int factorial = 1;
+
+  for (int i = 1; i <= number; i++) {
+    factorial *= i;
+  }
+
+  print('Factorial of $number is $factorial');
+}
+//Q5
+void main() {
+  int number = 12345;
+  int sum = 0;
+
+  while (number != 0) {
+    sum += number % 10;
+    number ~/= 10;
+  }
+
+  print('Sum of digits: $sum');
+}
+//Q6
+void main() {
+  List<int> numbers = [3, 9, 1, 6, 4, 2, 8, 5, 7];
+  int largest = numbers[0];
+
+  for (int i = 1; i < numbers.length; i++) {
+    if (numbers[i] > largest) {
+      largest = numbers[i];
+    }
+  }
+
+  print('Largest element: $largest');
+}
+//Q7
+void main() {
+  int number = 5;
+
+  for (int i = 1; i <= 10; i++) {
+    int result = number * i;
+    print('$number x $i = $result');
+  }
+}
+//Q8
+void main() {
+  String input = "radar";
+  if (isPalindrome(input)) {
+    print('"$input" is a palindrome.');
+  } else {
+    print('"$input" is not a palindrome.');
+  }
+}
+
+bool isPalindrome(String input) {
+  String reversed = input.split('').reversed.join('');
+  return input == reversed;
+}
+//Q9
+void main() {
+  int numberOfTerms = 5;
+  
+  for (int i = 1; i <= numberOfTerms; i++) {
+    int cube = i * i * i;
+    print('Number is: $i and cube of $i is: $cube');
+  }
+}
+//Q10
+void main() {
+  int rows = 4;
+
+  for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= i; j++) {
+      print('*');
+    }
+    print('');
+  }
+}
+//Q11
+void main() {
+  int rows = 4;
+
+  for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= i; j++) {
+      print(j);
+    }
+    print('');
+  }
+}
+//Q12
+void main() {
+  int rows = 4;
+
+  for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= i; j++) {
+      print(i);
+    }
+    print('');
+  }
+}
+//Q13
+void main() {
+  int rows = 4;
+  int count = 1;
+
+  for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= i; j++) {
+      print(count);
+      count++;
+    }
+    print('');
+  }
+}
+//Q14
+void main() {
+  int rows = 4;
+  int count = 1;
+
+  int i = 1;
+  while (i <= rows) {
+    int j = 1;
+    while (j <= i) {
+      print(count);
+      count++;
+      j++;
+    }
+    print('');
+    i++;
+  }
+}
+//Q15
+
