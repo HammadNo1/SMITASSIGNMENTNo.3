@@ -180,5 +180,277 @@ void main() {
     i++;
   }
 }
-//Q15
+//Q16
+import 'dart:io';
+
+void main() {
+  // Predefined set of credentials
+  final Map<String, String> predefinedCredentials = {
+    'obaid1@example.com': 'password1',
+    'sohail2@example.com': 'password2',
+    'hammad3@example.com': 'password3',
+  };
+
+  bool isLoggedIn = false;
+
+  while (!isLoggedIn) {
+    stdout.write('Enter your email: ');
+    String email = stdin.readLineSync() ?? '';
+    stdout.write('Enter your password: ');
+    String password = stdin.readLineSync() ?? '';
+
+    if (predefinedCredentials.containsKey(email) &&
+        predefinedCredentials[email] == password) {
+      print('User login successful.');
+      isLoggedIn = true;
+    } else {
+      print('Invalid credentials. Please try again.');
+    }
+  }
+}
+//Q17
+import 'dart:io';
+
+void main() {
+  // Predefined list of user credentials
+  final List<Map<String, String>> predefinedCredentials = [
+    {'email': 'obaid1@example.com', 'password': 'password1'},
+    {'email': 'sohail2@example.com', 'password': 'password2'},
+    {'email': 'hammad3@example.com', 'password': 'password3'},
+  ];
+
+  bool isLoggedIn = false;
+
+  while (!isLoggedIn) {
+    stdout.write('Enter your email: ');
+    String email = stdin.readLineSync() ?? '';
+    stdout.write('Enter your password: ');
+    String password = stdin.readLineSync() ?? '';
+
+    for (var credentials in predefinedCredentials) {
+      if (credentials['email'] == email && credentials['password'] == password) {
+        print('User login successful.');
+        isLoggedIn = true;
+        break;
+      }
+    }
+
+    if (!isLoggedIn) {
+      print('Invalid credentials. Please try again.');
+    }
+  }
+}
+//Q18
+import 'dart:io';
+
+void main() {
+  List<int> numbers = [];
+
+  stdout.write('Enter a list of numbers (separated by spaces): ');
+  String input = stdin.readLineSync() ?? '';
+  List<String> numberStrings = input.split(' ');
+
+  for (var numberString in numberStrings) {
+    int number = int.tryParse(numberString);
+    if (number != null) {
+      numbers.add(number);
+    }
+  }
+
+  print('Numbers greater than 5:');
+  for (var number in numbers) {
+    if (number > 5) {
+      print(number);
+    }
+  }
+}
+//Q19
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a string: ');
+  String input = (stdin.readLineSync() ?? '').toLowerCase();
+
+  int vowelCount = 0;
+
+  for (var i = 0; i < input.length; i++) {
+    String char = input[i];
+    if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
+      vowelCount++;
+    }
+  }
+
+  print('Number of vowels in the string: $vowelCount');
+}
+//Q20
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a list of numbers (separated by spaces): ');
+  String input = stdin.readLineSync() ?? '';
+  List<String> numberStrings = input.split(' ');
+
+  List<int> numbers = [];
+
+  for (var numberString in numberStrings) {
+    int number = int.tryParse(numberString);
+    if (number != null) {
+      numbers.add(number);
+    }
+  }
+
+  if (numbers.isEmpty) {
+    print('No valid numbers found in the list.');
+  } else {
+    int max = numbers[0];
+    int min = numbers[0];
+
+    for (var number in numbers) {
+      if (number > max) {
+        max = number;
+      }
+
+      if (number < min) {
+        min = number;
+      }
+    }
+
+    print('Maximum number in the list: $max');
+    print('Minimum number in the list: $min');
+  }
+}
+//Q21
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a list of numbers (separated by spaces): ');
+  String input = stdin.readLineSync() ?? '';
+  List<String> numberStrings = input.split(' ');
+
+  List<int> numbers = [];
+
+  for (var numberString in numberStrings) {
+    int number = int.tryParse(numberString);
+    if (number != null) {
+      numbers.add(number);
+    }
+  }
+
+  int sumOfSquares = 0;
+
+  for (var number in numbers) {
+    if (number % 2 != 0) {
+      sumOfSquares += number * number;
+    }
+  }
+
+  print('Sum of the squares of all odd numbers in the list: $sumOfSquares');
+}
+//Q22
+void main() {
+  List<Map<String, dynamic>> studentDetails = [
+    {'name': 'John', 'marks': [80, 75, 90], 'section': 'A', 'rollNumber': 101},
+    {'name': 'Emma', 'marks': [95, 92, 88], 'section': 'B', 'rollNumber': 102},
+    {'name': 'Ryan', 'marks': [70, 65, 75], 'section': 'A', 'rollNumber': 103},
+  ];
+
+  for (var student in studentDetails) {
+    String name = student['name'];
+    List<int> marks = List<int>.from(student['marks']);
+    double averageMarks = marks.reduce((a, b) => a + b) / marks.length;
+    String grade = getGrade(averageMarks);
+
+    print('Name: $name, Grade: $grade');
+  }
+}
+
+String getGrade(double averageMarks) {
+  if (averageMarks >= 90) {
+    return 'A';
+  } else if (averageMarks >= 80) {
+    return 'B';
+  } else if (averageMarks >= 70) {
+    return 'C';
+  } else if (averageMarks >= 60) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
+//Q23
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a list of numbers (separated by spaces): ');
+  String input = stdin.readLineSync() ?? '';
+  List<String> numberStrings = input.split(' ');
+
+  List<int> numbers = [];
+
+  for (var numberString in numberStrings) {
+    int number = int.tryParse(numberString);
+    if (number != null) {
+      numbers.add(number);
+    }
+  }
+
+  int sumOfNegatives = 0;
+  int negativeCount = 0;
+
+  for (var number in numbers) {
+    if (number < 0) {
+      sumOfNegatives += number;
+      negativeCount++;
+    }
+  }
+
+  double averageOfNegatives = negativeCount > 0 ? sumOfNegatives / negativeCount : 0;
+
+  print('Average of all the negative numbers in the list: $averageOfNegatives');
+}
+//Q24
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a list of integers (separated by spaces): ');
+  String input = stdin.readLineSync() ?? '';
+  List<String> numberStrings = input.split(' ');
+
+  List<int> numbers = [];
+
+  for (var numberString in numberStrings) {
+    int number = int.tryParse(numberString);
+    if (number != null) {
+      numbers.add(number);
+    }
+  }
+
+  List<int> primeNumbers = [];
+
+  for (var number in numbers) {
+    if (isPrime(number)) {
+      primeNumbers.add(number);
+    }
+  }
+
+  print('Prime numbers in the list: $primeNumbers');
+}
+
+bool isPrime(int num) {
+  if (num <= 1) {
+    return false;
+  }
+
+  for (var i = 2; i <= num / 2; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+
+
+
 
